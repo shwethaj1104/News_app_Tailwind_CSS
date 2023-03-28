@@ -1,19 +1,34 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { AfterViewInit, ChangeDetectorRef, Component,ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component,ViewChild,OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { NewsService } from './service/news.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit,OnInit {
   title = 'NewsApp';
+  sources: any = [];
+  articles:any = [];
+  selectedNewsChannel: string="Top 10 Trending News!";
   @ViewChild(MatSidenav) sideNav!: MatSidenav;
   // ChangeDetectorRef -->error in console saying state from true to false not detected
-  constructor(private observer : BreakpointObserver, private cd : ChangeDetectorRef, private newsApi : NewsService){
-
+  ngOnInit(): void {
+    this.newsApi.initArticles().subscribe((res:any)=>{
+      console.log("ARTICLES",res);
+      this.articles = res.articles;
+    })
+    this.newsApi.initSources().subscribe((res:any)=>{
+      console.log("SOURCES",res);
+      this.sources = res.sources;
+    })
+    
   }
+  constructor(private observer : BreakpointObserver, private cd : ChangeDetectorRef,
+     private newsApi : NewsService){}
+
   ngAfterViewInit(): void {
     this.sideNav.opened = true;
     this.observer.observe(['(max-width:800px)'])
@@ -34,5 +49,8 @@ export class AppComponent implements AfterViewInit {
       this.selectedNewsChannel = source.name
       this.articles = res.articles;
     })
+  }
+  here(){
+    console.log("clicked..................")
   }
 }
