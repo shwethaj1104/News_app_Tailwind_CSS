@@ -1,6 +1,6 @@
 # News app
 
-# install angular material.io --> https://material.angular.io/guide/getting-started
+Install angular material.io --> https://material.angular.io/guide/getting-started
 
 # install tailwind css
 
