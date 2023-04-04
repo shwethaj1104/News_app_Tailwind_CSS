@@ -11,6 +11,7 @@ Install angular material.io --> https://material.angular.io/guide/getting-starte
 # add "./src/\*_/_.{html,js}" in tailwind.config.js to content section
 
 Landing page:
+
 ![image](https://user-images.githubusercontent.com/107784718/228229750-e674ad4e-0830-4056-b9ff-2c63cb91995d.png)
 
 hide side nav bar:
