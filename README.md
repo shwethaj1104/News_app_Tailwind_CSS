@@ -2,7 +2,7 @@
 
 Install angular material.io --> https://material.angular.io/guide/getting-started
 
-# install tailwind css
+Install tailwind css
 
 # npm install -D tailwindcss postcss autoprefixer
 
