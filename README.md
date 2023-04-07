@@ -6,7 +6,7 @@ Install tailwind css -->
 
 --> npm install -D tailwindcss postcss autoprefixer
 
-# npx tailwindcss init -->creates tailwind.config.js
+--> npx tailwindcss init -->creates tailwind.config.js
 
 # add "./src/\*_/_.{html,js}" in tailwind.config.js to content section
 
