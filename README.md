@@ -8,7 +8,7 @@ Install tailwind css -->
 
 --> npx tailwindcss init -->creates tailwind.config.js
 
-# add "./src/\*_/_.{html,js}" in tailwind.config.js to content section
+--> add "./src/\*_/_.{html,js}" in tailwind.config.js to content section
 
 Landing page:
 
